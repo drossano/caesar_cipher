@@ -1,6 +1,11 @@
-def caesar_cipher (text, shift)
-  text_num = text.bytes
-  shfited_text_num = text_num.map do |n|
+class Cipher
+  def string_to_arr(text)
+    string_num = text.bytes
+  end
+
+  def caesar_cipher (text, shift)
+    text_num = text.bytes
+    shfited_text_num = text_num.map do |n|
       if n.between?(97,122)
         shifted_number = n + shift
         if shifted_number > 122
@@ -22,16 +27,7 @@ def caesar_cipher (text, shift)
       else
         n
       end
+    end
+    puts shfited_text_num.map { |shifted_number| shifted_number.chr}.join
   end
-  puts shfited_text = shfited_text_num.map { |shifted_number| shifted_number.chr}.join
 end
-
-print "Enter the message that you would like to encrypt: "
-
-text = gets.chomp
-
-print "Enter the number that you would like to shift your message by: "
-
-shift = gets.chomp.to_i
-
-caesar_cipher(text, shift)
