@@ -14,7 +14,7 @@ describe Cipher do
     end
     it "decreases each array element if a negative is given" do
       cipher = Cipher.new
-      expect(cipher.shift_arr([97 ,98, 99], -2)).to eql([95, 96, 97])
+      expect(cipher.shift_arr([97 ,98, 99], -2)).to eql([121, 122, 97])
     end
   end
   describe "#arr_to_string" do
@@ -39,6 +39,10 @@ describe Cipher do
     it "loops from z to a" do
       cipher = Cipher.new
       expect(cipher.cipher("zZ", 1)).to eql("aA")
+    end
+    it "loops from a to z" do
+      cipher = Cipher.new
+      expect(cipher.cipher("aA", -1)).to eql("zZ")
     end
   end
 end
