@@ -17,4 +17,16 @@ describe Cipher do
       expect(cipher.shift_arr([1, 2, 3], -2)).to eql([-1, 0, 1])
     end
   end
+  describe "#arr_to_string" do
+    it "changes the array back to a string" do
+      cipher = Cipher.new
+      expect(cipher.num_to_string([1, 2, 3])).to be_a(String)
+    end
+  end
+  describe "cipher" do
+    it "shifts a string by the given number of letters" do
+      cipher = Cipher.new
+      expect(cipher.cipher("abc", 2)).to eql("cde")  
+    end
+  end
 end

@@ -9,6 +9,14 @@ class Cipher
     end
   end
 
+  def num_to_string(array)
+    array.map { |n| n.chr}.join
+  end
+  
+  def cipher(text, shift)
+    num_to_string(shift_arr(string_to_arr(text), shift))
+  end
+
   def caesar_cipher (text, shift)
     text_num = text.bytes
     shfited_text_num = text_num.map do |n|
