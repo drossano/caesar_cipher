@@ -5,7 +5,11 @@ class Cipher
 
   def shift_arr(array, shift)
     array.map! do |n|
-      n + shift
+      if n.between?(97, 122) || n.between?(65, 90)
+        n + shift
+      else
+        n
+      end
     end
   end
 
