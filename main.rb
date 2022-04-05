@@ -1,6 +1,12 @@
 class Cipher
   def string_to_arr(text)
-    string_num = text.bytes
+    text.bytes
+  end
+
+  def shift_arr(array, shift)
+    array.map! do |n|
+      n + shift
+    end
   end
 
   def caesar_cipher (text, shift)
