@@ -36,5 +36,9 @@ describe Cipher do
       cipher = Cipher.new
       expect(cipher.cipher("ab cd!", 1)).to eql("bc de!")
     end
+    it "loops from z to a" do
+      cipher = Cipher.new
+      expect(cipher.cipher("zZ", 1)).to eql("aA")
+    end
   end
 end
